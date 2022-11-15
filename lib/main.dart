@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'provider/app_theme.dart';
+import 'screen/front_screen.dart';
 import 'screen/main_screen.dart';
 
 void main() {
@@ -24,12 +25,11 @@ class MyApp extends StatelessWidget {
           Consumer<AppThemeProvider>(builder: (context, appThemePro, snapshot) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          
           title: 'Real Estate',
           themeMode: appThemePro.themeMode,
           theme: AppThemes.light,
           darkTheme: AppThemes.dark,
-          home: const MianScreen(),
+          home: const MainScreen(),
         );
       }),
     );
