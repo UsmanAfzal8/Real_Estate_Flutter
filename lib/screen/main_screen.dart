@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:real_estate/widgets/custom/custom_elevated_button.dart';
+import 'package:real_estate/widgets/custom/for_text_custom_widget.dart';
 
 import '../utilities/app_images.dart';
 
@@ -16,10 +18,15 @@ class MianScreen extends StatelessWidget {
             Stack(
               clipBehavior: Clip.none,
               children: [
-               SizedBox(
-                  height: 450,
-                  width: double.infinity,
-                 child: Image(image: AssetImage(AppImages.homeBackground)),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  child: SizedBox(
+                    height: 450,
+                    width: double.infinity,
+                    child: Image(
+                        image: AssetImage(AppImages.homeBackground),
+                        fit: BoxFit.fill),
+                  ),
                 ),
                 Positioned(
                   bottom: -height * 0.5,
@@ -33,7 +40,37 @@ class MianScreen extends StatelessWidget {
                       decoration: const BoxDecoration(
                         borderRadius:
                             BorderRadius.only(topRight: Radius.circular(68)),
-                        color: Colors.black,
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(height: 60),
+                            const ForText(
+                              name: 'Perfect choice \nfor your future',
+                              bold: true,
+                              size: 42,
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            const Text(
+                              'Our properties the masterpiece for \nevery client with lasting value.',
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 18,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 35,
+                            ),
+                            CustomElevatedButton(
+                                title: 'Continue', onTap: () {}),
+                          ],
+                        ),
                       ),
                     ),
                   ),
