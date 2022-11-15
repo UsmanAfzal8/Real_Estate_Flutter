@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utilities/app_images.dart';
+
 class MianScreen extends StatelessWidget {
   const MianScreen({super.key});
 
@@ -11,27 +13,13 @@ class MianScreen extends StatelessWidget {
           child: SingleChildScrollView(
         child: Column(
           children: [
-            // const SizedBox(
-            //   height: 20,
-            // ),
-            // ClipPath(
-            //   clipper: ClipPathClass(),
-            //   child: Container(
-            //     decoration: const BoxDecoration(
-            //         color: Colors.red,
-            //         borderRadius:
-            //             BorderRadius.only(topRight: Radius.circular(58))),
-            //     height: 200,
-            //     width: 500,
-            //   ),
-            // )
             Stack(
               clipBehavior: Clip.none,
               children: [
-                Container(
+               SizedBox(
                   height: 450,
                   width: double.infinity,
-                  color: Colors.red,
+                 child: Image(image: AssetImage(AppImages.homeBackground)),
                 ),
                 Positioned(
                   bottom: -height * 0.5,
