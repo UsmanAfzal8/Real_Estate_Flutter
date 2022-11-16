@@ -3,6 +3,8 @@ import 'package:real_estate/utilities/app_images.dart';
 
 import '../widgets/custom/custom_icon_button.dart';
 import '../widgets/custom/custom_radio_button.dart';
+import '../widgets/custom/for_text_custom_widget.dart';
+import '../widgets/property/latest_property.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -103,6 +105,27 @@ class MainScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    const ForText(
+                      name: 'Latest Products',
+                      bold: true,
+                      size: 18,
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: ForText(
+                        name: 'View All',
+                        color: Theme.of(context).primaryColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const LatestPropertyList(),
             ],
           ),
         ),
