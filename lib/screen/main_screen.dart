@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate/widgets/custom/for_text_custom_widget.dart';
 
+import '../widgets/custom/custom_icon_button.dart';
+
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
@@ -67,9 +69,9 @@ class MainScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    types('House', Icons.house),
-                    types('Office', Icons.other_houses_sharp),
+                  children: const <Widget>[
+                    CustomIconButton(title: 'House', icon: Icons.house),
+                    CustomIconButton(title: 'Office', icon: Icons.house),
                   ],
                 ),
               ),
@@ -77,52 +79,14 @@ class MainScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    types('Shop', Icons.shop),
-                    types('Plot', Icons.houseboat_sharp),
+                  children: const <Widget>[
+                    CustomIconButton(title: 'Shop', icon: Icons.house),
+                    CustomIconButton(title: 'Plot', icon: Icons.house),
                   ],
                 ),
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget types(String title, IconData icon) {
-    return Container(
-      height: 150,
-      width: 150,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: const Color(0xfff8fafb),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 0.5,
-            blurRadius: 30,
-            offset: const Offset(0, 1), // changes position of shadow
-          ),
-        ],
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Icon(
-              icon,
-              color: Colors.grey,
-              size: 50,
-            ),
-            ForText(
-              name: title,
-              color: Colors.grey,
-              size: 18,
-              bold: true,
-            )
-          ],
         ),
       ),
     );
