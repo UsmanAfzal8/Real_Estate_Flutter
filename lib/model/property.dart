@@ -8,6 +8,7 @@ import '../enum/status_enum.dart';
 import '../enum/type_enum.dart';
 
 class Property {
+  final String pID;
   final String imageurl;
   final String description;
   final String location;
@@ -23,6 +24,7 @@ class Property {
   TypeEnum type;
   PurposeEnum purpose;
   Property({
+    required this.pID,
     required this.imageurl,
     required this.description,
     required this.location,
@@ -41,11 +43,12 @@ class Property {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'imageurl': imageurl,
+      'pid':pID,
+      'image_url': imageurl,
       'description': description,
       'location': location,
-      'bedRoom': bedRoom,
-      'bathRoom': bathRoom,
+      'bed_room': bedRoom,
+      'bath_room': bathRoom,
       'parking': parking,
       'garden': garden,
       'price': price,
@@ -60,11 +63,12 @@ class Property {
 
   factory Property.fromMap(DocumentSnapshot<Map<String, dynamic>> doc) {
     return Property(
-      imageurl: doc.data()?['imageurl'] ?? '',
+      pID: doc.data()?['pid']??'',
+      imageurl: doc.data()?['image_url'] ?? '',
       description: doc.data()?['description'] ?? '',
       location: doc.data()?['location'] ?? '',
-      bedRoom: doc.data()?['bedRoom'] ?? 0,
-      bathRoom: doc.data()?['bathRoom'] ?? 0,
+      bedRoom: doc.data()?['bed_room'] ?? 0,
+      bathRoom: doc.data()?['bath_room'] ?? 0,
       parking: doc.data()?['parking'] ?? 0,
       garden: doc.data()?['garden'] ?? 0,
       price: doc.data()?['price'] ?? 0,

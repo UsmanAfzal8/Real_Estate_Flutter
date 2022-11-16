@@ -4,8 +4,10 @@ import 'package:provider/provider.dart';
 
 import 'firebase_options.dart';
 import 'provider/app_theme.dart';
+import 'provider/property_provider.dart';
 import 'screen/front_screen.dart';
 import 'screen/main_screen.dart';
+import 'screen/upload_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,6 +27,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<AppThemeProvider>.value(
           value: AppThemeProvider(),
+        ),
+        ChangeNotifierProvider<PropertyProvider>.value(
+          value: PropertyProvider(),
         ),
       ],
       child:
