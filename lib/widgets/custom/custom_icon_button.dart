@@ -5,17 +5,17 @@ import 'for_text_custom_widget.dart';
 
 class CustomIconButton extends StatelessWidget {
   final String title;
-  final IconData icon;
+  final String imageurl;
   const CustomIconButton({
     Key? key,
     required this.title,
-    required this.icon,
+    required this.imageurl,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
+      height: 50,
       width: 150,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
@@ -29,24 +29,25 @@ class CustomIconButton extends StatelessWidget {
           ),
         ],
       ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Icon(
-              icon,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          SizedBox(
+            height: 30,
+            width: 30,
+            child: Image(
+              image: AssetImage(imageurl),
+              fit: BoxFit.fill,
               color: Colors.grey,
-              size: 50,
             ),
-            ForText(
-              name: title,
-              color: Colors.grey,
-              size: 18,
-              bold: true,
-            )
-          ],
-        ),
+          ),
+          ForText(
+            name: title,
+            color: Colors.grey,
+            size: 16,
+            bold: true,
+          )
+        ],
       ),
     );
   }

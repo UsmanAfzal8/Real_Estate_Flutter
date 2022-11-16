@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:real_estate/widgets/custom/for_text_custom_widget.dart';
+import 'package:real_estate/utilities/app_images.dart';
 
 import '../widgets/custom/custom_icon_button.dart';
 
@@ -69,9 +69,13 @@ class MainScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: const <Widget>[
-                    CustomIconButton(title: 'House', icon: Icons.house),
-                    CustomIconButton(title: 'Office', icon: Icons.house),
+                  children: <Widget>[
+                    CustomIconButton(
+                        title: 'House', imageurl: AppImages.houseIcon),
+                    CustomIconButton(
+                      title: 'Office',
+                      imageurl: AppImages.officeIcon,
+                    ),
                   ],
                 ),
               ),
@@ -79,9 +83,15 @@ class MainScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: const <Widget>[
-                    CustomIconButton(title: 'Shop', icon: Icons.house),
-                    CustomIconButton(title: 'Plot', icon: Icons.house),
+                  children: <Widget>[
+                    CustomIconButton(
+                      title: 'Shop',
+                      imageurl: AppImages.shopIcon,
+                    ),
+                    CustomIconButton(
+                      title: 'Plot',
+                      imageurl: AppImages.plotIcon,
+                    ),
                   ],
                 ),
               ),
