@@ -37,6 +37,15 @@ class MainScreen extends StatelessWidget {
                             color: Colors.black,
                           ),
                         ),
+                        SizedBox(
+                          width: 50,
+                        ),
+                        ForText(
+                          name: 'Asan Hal Property',
+                          color: Colors.white,
+                          bold: true,
+                          size: 22,
+                        )
                       ],
                     ),
                     Container(

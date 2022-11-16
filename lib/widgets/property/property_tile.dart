@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:real_estate/model/property.dart';
+import 'package:real_estate/utilities/app_images.dart';
 
 import '../../function/price_converstion_function.dart';
 import '../custom/custom_network_image.dart';
@@ -57,34 +58,107 @@ class PropertyTile extends StatelessWidget {
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8),
-                        child: Text(
-                          PriceConverstion().price(property.price),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            ForText(name: 'Pkr'),
+                            Text(
+                              PriceConverstion().price(property.price),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       const SizedBox(height: 5),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           const SizedBox(width: 6),
-                          Icon(
-                            Icons.star,
-                            color: Theme.of(context).primaryColor,
-                            size: 14,
+                          SizedBox(
+                            height: 14,
+                            width: 14,
+                            child: Image(
+                              image: AssetImage(AppImages.locationIcon),
+                              color: Colors.grey,
+                            ),
                           ),
                           const SizedBox(width: 6),
-                          const ForText(
-                            name: '0 Review',
+                          ForText(
+                            name: property.location,
                             size: 11,
                             color: Colors.grey,
                           ),
                         ],
                       ),
+                      const SizedBox(height: 5),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            const SizedBox(width: 6),
+                            SizedBox(
+                              height: 16,
+                              width: 16,
+                              child: Image(
+                                image: AssetImage(AppImages.bedRoomIcon),
+                                color: Colors.grey,
+                              ),
+                            ),
+                            const SizedBox(width: 6),
+                            ForText(
+                              name: property.bedRoom.toString(),
+                              size: 11,
+                              color: Colors.grey,
+                            ),
+                            Spacer(),
+                            SizedBox(
+                              height: 16,
+                              width: 16,
+                              child: Image(
+                                image: AssetImage(AppImages.bathRoomIcon),
+                                color: Colors.grey,
+                              ),
+                            ),
+                            const SizedBox(width: 6),
+                            ForText(
+                              name: property.bathRoom.toString(),
+                              size: 11,
+                              color: Colors.grey,
+                            ),
+                            const SizedBox(width: 6),
+                            property.electricity
+                                ? SizedBox(
+                                    height: 16,
+                                    width: 16,
+                                    child: Image(
+                                      image:
+                                          AssetImage(AppImages.electricityIcon),
+                                      color: Colors.grey,
+                                    ),
+                                  )
+                                : SizedBox(),
+                            const SizedBox(width: 6),
+                            property.gas
+                                ? SizedBox(
+                                    height: 16,
+                                    width: 16,
+                                    child: Image(
+                                      image: AssetImage(AppImages.gasIcon),
+                                      color: Colors.grey,
+                                    ),
+                                  )
+                                : SizedBox(),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 5),
                     ],
                   ),
                 ),
