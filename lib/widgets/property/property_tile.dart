@@ -6,6 +6,7 @@ import 'package:real_estate/utilities/app_images.dart';
 import '../../function/price_converstion_function.dart';
 import '../custom/custom_network_image.dart';
 import '../custom/for_text_custom_widget.dart';
+import 'property_full_screen.dart';
 
 class PropertyTile extends StatelessWidget {
   const PropertyTile({required this.property, Key? key}) : super(key: key);
@@ -13,9 +14,17 @@ class PropertyTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 8),
+      padding:  const EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 8),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+           Navigator.push(
+                      context,
+                      // ignore: always_specify_types
+                      MaterialPageRoute(
+                        builder: (BuildContext context) =>  ProductFullScreen(property: property),
+                      ),
+                    );
+        },
         child: AspectRatio(
           aspectRatio: 9 / 12,
           child: Container(

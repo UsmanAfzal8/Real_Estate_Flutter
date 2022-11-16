@@ -8,6 +8,7 @@ import 'provider/property_provider.dart';
 import 'screen/front_screen.dart';
 import 'screen/main_screen.dart';
 import 'screen/upload_screen.dart';
+import 'widgets/property/property_full_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
