@@ -18,7 +18,6 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
       onTap: () {
         setState(() {
           rent = !rent;
-          print(rent);
         });
       },
       child: Container(
