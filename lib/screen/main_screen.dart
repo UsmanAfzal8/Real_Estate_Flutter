@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:real_estate/utilities/app_images.dart';
 
 import '../widgets/custom/custom_icon_button.dart';
+import '../widgets/custom/custom_radio_button.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -61,6 +62,12 @@ class MainScreen extends StatelessWidget {
                           ],
                         ),
                       ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: const <Widget>[
+                        CustomRadioButton(),
+                      ],
                     ),
                   ],
                 ),
